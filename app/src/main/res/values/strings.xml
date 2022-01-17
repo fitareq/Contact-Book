@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Contact Book</string>
+    <string name="welcome">Welcome</string>
+    <string name="back">Back!</string>
+    <string name="sign_in">Sign In</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="password">Password</string>
+    <string name="user_name_or_email">User Name or Email</string>
+</resources>
