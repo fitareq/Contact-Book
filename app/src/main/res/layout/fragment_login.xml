@@ -50,7 +50,8 @@
         app:boxStrokeColor="@color/edit_text_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_email"
@@ -59,7 +60,9 @@
             android:drawableStart="@drawable/ic_email"
             android:drawablePadding="10dp"
             android:imeOptions="actionNext"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -91,7 +94,9 @@
             android:drawableStart="@drawable/ic_password"
             android:drawablePadding="10dp"
             android:imeOptions="actionDone"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
