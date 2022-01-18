@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -13,9 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.fitareq.contactbook.R;
+import com.fitareq.contactbook.viewmodel.ContactViewModel;
 
 public class ContactFragment extends Fragment {
 
+    private ContactViewModel contactViewModel;
 
 
     public ContactFragment() {
@@ -32,8 +35,11 @@ public class ContactFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         NavController navController = Navigation.findNavController(view);
-        navController.navigate(R.id.action_contactFragment_to_loginFragment);
+        contactViewModel = new ViewModelProvider(requireActivity()).get(ContactViewModel.class);
+
+
+
+
     }
 }
