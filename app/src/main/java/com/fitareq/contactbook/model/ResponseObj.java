@@ -1,7 +1,10 @@
 package com.fitareq.contactbook.model;
 
+import androidx.room.Entity;
+
 import com.google.gson.annotations.SerializedName;
 
+@Entity(tableName = "user_data")
 public class ResponseObj {
     @SerializedName("token")
     private String token;
