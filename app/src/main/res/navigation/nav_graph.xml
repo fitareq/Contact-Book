@@ -24,8 +24,7 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_contactFragment"
-            app:destination="@id/contactFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/contactFragment" />
     </fragment>
     <fragment
         android:id="@+id/addNewContactFragment"

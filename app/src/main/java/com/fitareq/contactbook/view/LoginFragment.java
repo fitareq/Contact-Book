@@ -39,6 +39,11 @@ public class LoginFragment extends Fragment {
     }
 
     @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -58,9 +63,10 @@ public class LoginFragment extends Fragment {
 
         loginViewModel = new ViewModelProvider(requireActivity()).get(LoginViewModel.class);
         NavController navController = Navigation.findNavController(view);
+        navController.navigate(R.id.action_loginFragment_to_contactFragment);
         loginViewModel.getUserData().observe(requireActivity(), responseObj -> {
-            if (responseObj != null)
-                navController.navigate(R.id.action_loginFragment_to_contactFragment);
+            if (responseObj != null){}
+
         });
 
 
@@ -76,7 +82,7 @@ public class LoginFragment extends Fragment {
                 userEmailLayout.setError("Please enter email");
             }else if (TextUtils.isEmpty(pass))
             {
-                userPassLayout.setError("Please enter email");
+                userPassLayout.setError("Please enter password");
             }else {
 
                 loginViewModel.loginUser(new LoginBody(email, pass), new LoginRepository.LoginCallBack() {
