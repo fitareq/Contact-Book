@@ -20,20 +20,17 @@ import retrofit2.Response;
 public class LoginRepository {
 
     private UserDao userDao;
-    private LiveData<ResponseObj> userData;
+
 
     public LoginRepository(Application application) {
         userDao = LocalDatabase.getInstance(application).userDao();
-        userData = userDao.getUserData();
     }
 
     public void setUserData(ResponseObj responseObj) {
         LocalDatabase.databaseWriteExecutor.execute(() -> userDao.insertUserData(responseObj));
     }
 
-    public LiveData<ResponseObj> getUserData() {
-        return this.userData;
-    }
+
 
 
 

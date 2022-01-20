@@ -14,18 +14,19 @@ import java.util.List;
 public class ContactRepository {
     private DataDao dataDao;
     private LiveData<List<ContactData>> contactData;
+    private LiveData<ResponseObj> userData;
 
 
     public ContactRepository(Application application)
     {
         dataDao = LocalDatabase.getInstance(application).dataDao();
         contactData = dataDao.getAllContact();
+        userData = dataDao.getUserData();
 
     }
 
-    public void addNewContact(ContactData contactData)
-    {
-        LocalDatabase.databaseWriteExecutor.execute(()->dataDao.insertContact(contactData));
+    public LiveData<ResponseObj> getUserData() {
+        return this.userData;
     }
 
     public LiveData<List<ContactData>> getAllContact(){

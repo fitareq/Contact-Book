@@ -20,13 +20,11 @@ public class ContactViewModel extends AndroidViewModel {
         repository = new ContactRepository(application);
     }
 
-    public void addNewContact(ContactData contactData){
-        repository.addNewContact(contactData);
-    }
-
     public LiveData<List<ContactData>> getAllContact(){
         return repository.getAllContact();
     }
 
-
+    public LiveData<ResponseObj> getUserData(){
+        return repository.getUserData();
+    }
 }

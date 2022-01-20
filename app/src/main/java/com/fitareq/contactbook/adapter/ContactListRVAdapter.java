@@ -42,7 +42,8 @@ public class ContactListRVAdapter extends RecyclerView.Adapter<ContactListRVAdap
         ContactData data = dataList.get(position);
         String image = " "+data.getName().charAt(0)+" ";
 
-        holder.contactImage.setText(image);
+
+        holder.contactImage.setText(image.toUpperCase());
         holder.contactName.setText(data.getName());
 
         if (data.getAddress() != null)
@@ -56,7 +57,7 @@ public class ContactListRVAdapter extends RecyclerView.Adapter<ContactListRVAdap
 
         holder.mainContainer.setOnClickListener(v ->
         {
-            itemOnClick.itemOnClickListener(data.getId());
+            itemOnClick.itemOnClickListener(data);
         });
         holder.contactLocation.setOnClickListener(v -> {
 
@@ -87,6 +88,6 @@ public class ContactListRVAdapter extends RecyclerView.Adapter<ContactListRVAdap
     }
 
     public interface ItemOnClick{
-        void itemOnClickListener(int id);
+        void itemOnClickListener(ContactData data);
     }
 }

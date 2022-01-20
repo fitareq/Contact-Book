@@ -11,4 +11,5 @@
     <color name="primary">#3DD598</color>
     <color name="welcome_text_color">#88989F</color>
     <color name="edit_text_back">#30444E</color>
+    <color name="error_color">#C73E1D</color>
 </resources>

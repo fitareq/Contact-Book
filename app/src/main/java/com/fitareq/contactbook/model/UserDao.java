@@ -12,6 +12,5 @@ public interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertUserData(ResponseObj responseObj);
 
-    @Query("SELECT * FROM user_data")
-    LiveData<ResponseObj> getUserData();
+
 }

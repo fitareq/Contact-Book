@@ -63,11 +63,8 @@ public class LoginFragment extends Fragment {
 
         loginViewModel = new ViewModelProvider(requireActivity()).get(LoginViewModel.class);
         NavController navController = Navigation.findNavController(view);
-        navController.navigate(R.id.action_loginFragment_to_contactFragment);
-        loginViewModel.getUserData().observe(requireActivity(), responseObj -> {
-            if (responseObj != null){}
 
-        });
+
 
 
         loginFab.setOnClickListener(v -> {

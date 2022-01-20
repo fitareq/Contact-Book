@@ -84,12 +84,13 @@
             android:id="@+id/add_new_contact_phone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:imeOptions="actionNext"
-            android:inputType="text"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
             android:textColor="@color/welcome_text_color" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -113,7 +114,8 @@
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:layout_margin="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
 
         <TextView
             android:id="@+id/add_new_contact_address"
@@ -125,18 +127,33 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/add_new_contact_select_an_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Please select an address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:padding="3dp"
+        android:textColor="@color/error_color"
+        android:textSize="11sp"
+        android:visibility="gone"/>
+
 
     <Button
         android:id="@+id/add_new_contact_save_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="16dp"
         android:padding="10dp"
         android:text="@string/save"
         android:textAllCaps="false"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_new_contact_select_an_address" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

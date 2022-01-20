@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/contactFragment">
 
     <fragment
         android:id="@+id/contactFragment"
@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_contactFragment_to_contactDetailsFragment"
             app:destination="@id/contactDetailsFragment" />
+        <action
+            android:id="@+id/action_contactFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -24,7 +27,10 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_contactFragment"
-            app:destination="@id/contactFragment" />
+            app:destination="@id/contactFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/contactFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/addNewContactFragment"
@@ -33,7 +39,8 @@
         tools:layout="@layout/fragment_add_new_contact" >
         <action
             android:id="@+id/action_addNewContactFragment_to_contactFragment"
-            app:destination="@id/contactFragment" />
+            app:destination="@id/contactFragment"
+            app:popUpTo="@id/contactFragment" />
     </fragment>
     <fragment
         android:id="@+id/contactDetailsFragment"
@@ -42,6 +49,7 @@
         tools:layout="@layout/fragment_contact_details" >
         <action
             android:id="@+id/action_contactDetailsFragment_to_contactFragment"
-            app:destination="@id/contactFragment" />
+            app:destination="@id/contactFragment"
+            app:popUpTo="@id/contactFragment" />
     </fragment>
 </navigation>

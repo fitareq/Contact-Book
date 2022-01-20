@@ -18,5 +18,8 @@ public interface DataDao {
     @Query("SELECT * FROM contact_data")
     LiveData<List<ContactData>> getAllContact();
 
+    @Query("SELECT * FROM user_data")
+    LiveData<ResponseObj> getUserData();
+
 
 }
