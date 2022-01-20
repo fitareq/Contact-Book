@@ -6,6 +6,7 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 
 import com.fitareq.contactbook.database.LocalDatabase;
+import com.fitareq.contactbook.model.DataDao;
 import com.fitareq.contactbook.model.LoginBody;
 import com.fitareq.contactbook.model.LoginResponse;
 import com.fitareq.contactbook.model.ResponseObj;
@@ -20,20 +21,24 @@ import retrofit2.Response;
 public class LoginRepository {
 
     private UserDao userDao;
+    private DataDao dataDao;
+    private LiveData<ResponseObj> userData;
 
 
     public LoginRepository(Application application) {
-        userDao = LocalDatabase.getInstance(application).userDao();
+        LocalDatabase db = LocalDatabase.getInstance(application);
+        userDao = db.userDao();
+        dataDao = db.dataDao();
+        userData = dataDao.getUserData();
     }
 
     public void setUserData(ResponseObj responseObj) {
         LocalDatabase.databaseWriteExecutor.execute(() -> userDao.insertUserData(responseObj));
     }
 
-
-
-
-
+    public LiveData<ResponseObj> getUserData() {
+        return this.userData;
+    }
 
     public void loginUser(LoginBody loginBody, LoginCallBack loginCallBack) {
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);

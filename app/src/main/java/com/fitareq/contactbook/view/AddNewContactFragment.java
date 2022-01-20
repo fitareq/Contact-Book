@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -71,6 +72,7 @@ public class AddNewContactFragment extends Fragment implements OnMapReadyCallbac
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         return inflater.inflate(R.layout.fragment_add_new_contact, container, false);
     }
 
@@ -108,6 +110,8 @@ public class AddNewContactFragment extends Fragment implements OnMapReadyCallbac
 
     private void saveContact()
     {
+        nameTIL.setError(null);
+        phoneTIL.setError(null);
         String name = nameET.getText().toString();
         String phone = phoneET.getText().toString();
         if (TextUtils.isEmpty(name))
@@ -138,11 +142,12 @@ public class AddNewContactFragment extends Fragment implements OnMapReadyCallbac
         map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(@NonNull LatLng latLng) {
+
                 getUserFullAddress(latLng);
                 MarkerOptions markerOptions = new MarkerOptions();
                 markerOptions.position(latLng);
                 map.clear();
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, googleMap.getCameraPosition().zoom));
                 map.addMarker(markerOptions);
             }
         });

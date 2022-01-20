@@ -5,6 +5,8 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,12 +17,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.fitareq.contactbook.R;
 import com.fitareq.contactbook.model.ContactData;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class ContactListRVAdapter extends RecyclerView.Adapter<ContactListRVAdapter.ContactListViewHolder> {
+public class ContactListRVAdapter extends RecyclerView.Adapter<ContactListRVAdapter.ContactListViewHolder> implements Filterable {
 
 
     private List<ContactData> dataList;
+    private List<ContactData> dataListFull;
     private Context context;
     private ItemOnClick itemOnClick;
 
@@ -28,6 +32,7 @@ public class ContactListRVAdapter extends RecyclerView.Adapter<ContactListRVAdap
         this.dataList = dataList;
         this.context = context;
         this.itemOnClick = itemOnClick;
+        this.dataListFull = new ArrayList<>(dataList);
     }
 
     @NonNull
@@ -40,7 +45,7 @@ public class ContactListRVAdapter extends RecyclerView.Adapter<ContactListRVAdap
     @Override
     public void onBindViewHolder(@NonNull ContactListViewHolder holder, int position) {
         ContactData data = dataList.get(position);
-        String image = " "+data.getName().charAt(0)+" ";
+        String image = String.valueOf(data.getName().charAt(0));
 
 
         holder.contactImage.setText(image.toUpperCase());
@@ -69,6 +74,53 @@ public class ContactListRVAdapter extends RecyclerView.Adapter<ContactListRVAdap
     public int getItemCount() {
         return dataList != null ? dataList.size(): 0;
     }
+
+    @Override
+    public Filter getFilter()
+    {
+        return filter;
+    }
+
+    private Filter filter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<ContactData> filteredData = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0)
+            {
+                filteredData.addAll(dataListFull);
+
+            }else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+                for (ContactData data: dataListFull)
+                {
+                    if (data.getName().toLowerCase().contains(filterPattern))
+                    {
+                        filteredData.add(data);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredData;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            dataList.clear();
+            dataList.addAll((List)results.values);
+            notifyDataSetChanged();
+        }
+    };
+
+
+
+
+
+
+
+
+
 
     public class ContactListViewHolder extends RecyclerView.ViewHolder
     {

@@ -22,6 +22,9 @@ public class LoginViewModel extends AndroidViewModel {
     {
         repository.setUserData(responseObj);
     }
+    public LiveData<ResponseObj> getUserData(){
+        return repository.getUserData();
+    }
 
     public void loginUser(LoginBody loginBody, LoginRepository.LoginCallBack loginCallBack)
     {

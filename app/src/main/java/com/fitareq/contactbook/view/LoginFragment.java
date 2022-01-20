@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -47,6 +48,7 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         return inflater.inflate(R.layout.fragment_login, container, false);
     }
 
@@ -62,9 +64,13 @@ public class LoginFragment extends Fragment {
         userPassLayout = view.findViewById(R.id.textInputLayout2);
 
         loginViewModel = new ViewModelProvider(requireActivity()).get(LoginViewModel.class);
-        NavController navController = Navigation.findNavController(view);
 
-
+        loginViewModel.getUserData().observe(requireActivity(), responseObj -> {
+            if (responseObj != null)
+            {
+                navController.navigate(R.id.action_loginFragment_to_contactFragment);
+            }
+        });
 
 
         loginFab.setOnClickListener(v -> {
@@ -87,7 +93,7 @@ public class LoginFragment extends Fragment {
                     public void loginSuccessResponse(ResponseObj responseObj) {
                         Toast.makeText(getContext(), "Login Successful", Toast.LENGTH_SHORT).show();
                         loginViewModel.setUserData(responseObj);
-                        navController.navigate(R.id.action_loginFragment_to_contactFragment);
+                        //navController.navigate(R.id.action_loginFragment_to_contactFragment);
                     }
 
                     @Override
