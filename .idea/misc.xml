@@ -3,24 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/drawable/rounded_back_for_toolbar.xml" value="0.2203125" />
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/drawable/rounded_back_with_icon.xml" value="0.2203125" />
+        <entry key="..\:/Contact-Book/app/src/main/res/drawable/ic_round_person_pin_circle_24.xml" value="0.37864583333333335" />
+        <entry key="..\:/Contact-Book/app/src/main/res/drawable/ic_vector_book_blue.xml" value="0.37864583333333335" />
+        <entry key="..\:/Contact-Book/app/src/main/res/drawable/rounded_back.xml" value="0.37864583333333335" />
+        <entry key="..\:/Contact-Book/app/src/main/res/drawable/rounded_back_for_toolbar.xml" value="0.37864583333333335" />
+        <entry key="..\:/Contact-Book/app/src/main/res/drawable/rounded_back_with_icon.xml" value="0.37864583333333335" />
+        <entry key="..\:/Contact-Book/app/src/main/res/drawable/rounder_back.xml" value="0.37864583333333335" />
+        <entry key="..\:/Contact-Book/app/src/main/res/drawable/set_address_back.xml" value="0.37864583333333335" />
+        <entry key="..\:/Contact-Book/app/src/main/res/drawable/splash.xml" value="0.37864583333333335" />
+        <entry key="..\:/Contact-Book/app/src/main/res/drawable/square_back_for_bottom_sheet.xml" value="0.37864583333333335" />
+        <entry key="..\:/Contact-Book/app/src/main/res/drawable/textview_selector.xml" value="0.37864583333333335" />
+        <entry key="..\:/Contact-Book/app/src/main/res/layout/activity_main.xml" value="0.20260416666666667" />
+        <entry key="..\:/Contact-Book/app/src/main/res/layout/bottom_sheet.xml" value="0.3625" />
+        <entry key="..\:/Contact-Book/app/src/main/res/layout/contact_card.xml" value="0.25" />
+        <entry key="..\:/Contact-Book/app/src/main/res/layout/fragment_add_new_contact.xml" value="0.4" />
+        <entry key="..\:/Contact-Book/app/src/main/res/layout/fragment_contact.xml" value="0.264" />
+        <entry key="..\:/Contact-Book/app/src/main/res/layout/fragment_contact_details.xml" value="0.3625" />
+        <entry key="..\:/Contact-Book/app/src/main/res/layout/fragment_login.xml" value="0.3625" />
+        <entry key="..\:/Contact-Book/app/src/main/res/menu/add_new_contact_menu.xml" value="0.3625" />
+        <entry key="..\:/Contact-Book/app/src/main/res/menu/app_bar_menu.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/drawable/rounded_square.xml" value="0.2203125" />
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/drawable/rounder_back.xml" value="0.2203125" />
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/drawable/splash.xml" value="0.2203125" />
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/drawable/splash_screen.xml" value="0.2203125" />
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/drawable/square_back_for_bottom_sheet.xml" value="0.2203125" />
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/drawable/textview_selector.xml" value="0.2203125" />
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/layout/activity_main.xml" value="0.18" />
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/layout/bottom_sheet.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/layout/contact_card.xml" value="0.22" />
+        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/layout/fragment_add_new_contact.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/layout/fragment_contact.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/layout/fragment_contact_details.xml" value="0.25" />
+        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/layout/fragment_contact_details.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/layout/fragment_login.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/layout/splash.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/menu/add_new_contact_menu.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/0m364/AndroidStudioProjects/ContactBook/app/src/main/res/menu/app_bar_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
